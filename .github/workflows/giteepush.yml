@@ -25,7 +25,7 @@ jobs:
     - name: Pull changes from Gitee (if any)
       run: |
         git fetch gitee dev
-        git merge gitee/dev  # 将 Gitee 的 dev 分支合并到当前分支
+        git merge gitee/dev --allow-unrelated-histories  # 将 Gitee 的 dev 分支合并到当前分支
 
     - name: Push to Gitee
       run: |
