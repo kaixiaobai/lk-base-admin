@@ -22,13 +22,13 @@ jobs:
 
     - name: Add Gitee remote
       run: |
-        git remote add gitee https://17861502693:l1298646637@gitee.com/lsuperkai/lk-proj-adminweb.git
+        git remote add gitee https://${{ secrets.USER_NAME }}:${{ secrets.PASS_WORD }}@gitee.com/lsuperkai/lk-proj-adminweb.git
 
     - name: Pull changes from Gitee (if any)
       run: |
-        git fetch gitee dev
-        git merge gitee/dev --allow-unrelated-histories  # 将 Gitee 的 dev 分支合并到当前分支
+        git fetch gitee github-main
+        git merge gitee/github-main --allow-unrelated-histories  # 将 Gitee 的 dev 分支合并到当前分支
 
     - name: Push to Gitee
       run: |
-        git push gitee HEAD:dev  # 将 main 分支推送到 Gitee 的 dev 分支
+        git push gitee HEAD:github-main  # 将 main 分支推送到 Gitee 的 dev 分支
