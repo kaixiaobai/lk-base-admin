@@ -20,7 +20,7 @@ jobs:
 
     - name: Add Gitee remote
       run: |
-        git remote add gitee https://${{ secrets.GITEE_TOKEN }}@gitee.com/lsuperkai/lk-proj-adminweb.git
+        git remote add gitee https://17861502693:l1298646637@gitee.com/lsuperkai/lk-proj-adminweb.git
 
     - name: Pull changes from Gitee (if any)
       run: |
